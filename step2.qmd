@@ -1,3 +1,0 @@
-# Step 2 {#sec-step2}
-
-This is step 2 of the tutorial.

@@ -2,22 +2,32 @@ project:
   type: book
 
 book:
-  title: "A Tutorial Template"
-  author: "DSS Superstar #1"
+  title: "Propensity Score Analysis: A Primer and Tutorial"
+  author: "Noah Greifer"
   date: "last-modified"
   page-navigation: true
-  search: true
   favicon: images/favicon.png
+  search: true
   chapters:
     - index.qmd
-    - introduction.qmd
-    - part: "Section 1"
+    - planning.qmd
+    - part: "Running the Analysis"
       chapters:
-        - step1.qmd
-    - part: "Section 2"
+        - running.qmd
+        - conceptual.qmd
+        - conditioning.qmd
+        - assessing.qmd
+        - respecification.qmd
+        - estimating.qmd
+        - sensitivity.qmd
+        - advanced.qmd
+    - reporting.qmd
+    - part: "Example"
       chapters:
-        - step2.qmd
-    - step3.qmd
+        - example.qmd
+        - ex-match.qmd
+        - ex-weight.qmd
+    - conclusion.qmd
     - references.qmd
 
 bibliography: references.bib
@@ -27,8 +37,8 @@ format:
     theme:
       light: cosmo
     code-link: true
+    author-meta: "Noah Greifer"
     callout-appearance: simple
 
 execute:
   freeze: auto
-
