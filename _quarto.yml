@@ -1,0 +1,34 @@
+project:
+  type: book
+
+book:
+  title: "A Tutorial Template"
+  author: "DSS Superstar #1"
+  date: "last-modified"
+  page-navigation: true
+  search: true
+  favicon: images/favicon.png
+  chapters:
+    - index.qmd
+    - introduction.qmd
+    - part: "Section 1"
+      chapters:
+        - step1.qmd
+    - part: "Section 2"
+      chapters:
+        - step2.qmd
+    - step3.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme:
+      light: cosmo
+    code-link: true
+    callout-appearance: simple
+
+execute:
+  freeze: auto
+

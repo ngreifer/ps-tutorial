@@ -1,0 +1,5 @@
+# Preface {.unnumbered}
+
+This is the landing page of the tutorial. It must always be called "index.qmd".
+
+See [https://quarto.org/docs/books/](https://quarto.org/docs/books/) for more information on customizing a Quarto book.
