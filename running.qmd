@@ -1,6 +1,6 @@
 # Basic Steps {#sec-running}
 
-In this section, we describe how to run a propensity score analysis. First, we describe the steps and the choices one must make in each step, and then we provide some examples for how to run the described analysis using R.
+In this section, we describe how to run a matching or weighting analysis. First, we describe the steps and the choices one must make in each step, and then we provide some examples for how to run the described analysis using R.
 
 The basic steps of the analysis are as follows:
 

@@ -17,8 +17,8 @@ First we'll perform the most common weighting method, inverse probability weight
 
 ```{r}
 w1 <- weightit(RHC ~ aps1 + meanbp1 + pafi1 + crea1 + hema1 +
-                paco21 + surv2md1 + resp1 + card + edu +
-                age + race + sex, data = rhc,
+                 paco21 + surv2md1 + resp1 + card + edu +
+                 age + race + sex, data = rhc,
                estimand = "ATE")
 w1
 ```
@@ -33,9 +33,9 @@ Balance looks excellent using standard inverse probability weighting, and normal
 
 ```{r}
 w2 <- weightit(RHC ~ aps1 + meanbp1 + pafi1 + crea1 + hema1 +
-                paco21 + surv2md1 + resp1 + card + edu +
-                age + race + sex, data = rhc,
-               estimand = "ATE", method = "entropy")
+                 paco21 + surv2md1 + resp1 + card + edu +
+                 age + race + sex, data = rhc,
+               estimand = "ATE", method = "ebal")
 w2
 
 bal.tab(w2, binary = "std", int = TRUE,
@@ -47,8 +47,8 @@ Here we included interactions and up to fourth powers of the covariates to asses
 
 ```{r}
 w3 <- weightit(RHC ~ aps1 + meanbp1 + pafi1 + crea1 + hema1 +
-                paco21 + surv2md1 + resp1 + card + edu +
-                age + race + sex, data = rhc,
+                 paco21 + surv2md1 + resp1 + card + edu +
+                 age + race + sex, data = rhc,
                estimand = "ATE", method = "energy")
 w3
 
@@ -65,33 +65,28 @@ To estimate the treatment effect, we will again use g-computation, aided by the 
 library("marginaleffects")
 ```
 
-First, we need to extract the weights from our `weightit` object, and then we fit the outcome model. Remember, this model is not to be interpreted.
+First, we need to fit the outcome model. Remember, this model is not to be interpreted. We can use `glm_weightit()`, which automatically estimates asymptotically correct SEs when available and robust SEs otherwise. For energy balancing, the latter are used, which are generally appropriate for weighting for the ATE (though they may be conservative). Other methods of computing SEs can be requested using the `vcov` argument.
 
 ```{r}
-# Bring the weights into the dataset
-rhc$weights <- w3$weights
-
 # Fit the outcome model
-fit <- glm(death ~ RHC * (aps1 + meanbp1 + pafi1 + crea1 + hema1 +
-                            paco21 + surv2md1 + resp1 + card + edu +
-                            age + race + sex),
-           data = rhc, weights = weights, family = quasibinomial)
+fit <- glm_weightit(death ~ RHC * (aps1 + meanbp1 + pafi1 + crea1 + hema1 +
+                                     paco21 + surv2md1 + resp1 + card + edu +
+                                     age + race + sex),
+                    data = rhc,
+                    weightit = w3,
+                    family = binomial)
 ```
 
-Next we'll compute the marginal predictions and their ratio. Here we'll request robust standard errors, which are generally appropriate for weighting for the ATE (though they may be conservative).
+Next we'll compute the marginal predictions and their ratio.
 
 ```{r}
 # Marginal predictions
 avg_predictions(fit,
-                variables = "RHC",
-                wts = "weights",
-                vcov = "HC3")
+                variables = "RHC")
 
 # Risk ratio
 avg_comparisons(fit,
                 variables = "RHC",
-                wts = "weights",
-                vcov = "HC3",
                 comparison = "lnratioavg",
                 transform = "exp")
 ```
