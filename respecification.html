@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Noah Greifer">
 
-<title>Propensity Score Analysis: A Primer and Tutorial - 6&nbsp; Respecification</title>
+<title>6&nbsp; Respecification – Matching and Weighting for Causal Inference: A Primer and Tutorial</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,6 +25,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -68,7 +69,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -77,6 +84,7 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -92,13 +100,13 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./running.html">Running the Analysis</a></li><li class="breadcrumb-item"><a href="./respecification.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Respecification</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./running.html">Running the Analysis</a></li><li class="breadcrumb-item"><a href="./respecification.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Respecification</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -107,10 +115,10 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Propensity Score Analysis: A Primer and Tutorial</a> 
+      <a href="./">Matching and Weighting for Causal Inference: A Primer and Tutorial</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -134,9 +142,9 @@ div.csl-indent {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Running the Analysis</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -199,9 +207,9 @@ div.csl-indent {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Example</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -241,15 +249,15 @@ div.csl-indent {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
         
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./running.html">Running the Analysis</a></li><li class="breadcrumb-item"><a href="./respecification.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Respecification</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span id="sec-respecification" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Respecification</span></span></h1>
 </div>
@@ -264,14 +272,16 @@ div.csl-indent {
   </div>
   
 
+
 </header>
 
-<p>If a given specification is not adequate in that balance is too poor, the effective sample size is too small, or the sample is no longer representative of the target population, one must respecify. Respecification can involve changing some aspect of the conditioning strategy, such as changing a parameter involved in the matching or weighting or changing the model used to estimate propensity scores. Because there are so many parameters that can be changed and they can be changed in so many ways, it is impossible to give a complete account of the best way to respecify. One should try many specifications, examining patterns in how making those changes improves the quality of the resulting sample. As long as the outcome is not involved in this process, doing so will not invalidate inferences made at the end.</p>
+
+<p>If a given specification is not adequate in that balance is too poor, the effective sample size is too small, or the sample is no longer representative of the target population, one must respecify. Respecification can involve changing some aspect of the conditioning strategy, such as changing a parameter involved in the matching or weighting or changing the model used to estimate propensity scores, if any. Because there are so many parameters that can be changed and they can be changed in so many ways, it is impossible to give a complete account of the best way to respecify. One should try many specifications, examining patterns in how making those changes improves the quality of the resulting sample. As long as the outcome is not involved in this process, doing so will not invalidate inferences made at the end.</p>
 <p>There are some common tricks that can be used to nudge the respecification process in the right direction. Below are some common issues and some potential solutions.</p>
 <ul>
-<li><p>Poor balance as measured by SMDs: consider using an optimization-based method, like entropy balancing or cardinality matching or using a method that changes the estimand, like caliper matching or overlap weighting</p></li>
-<li><p>Poor balance beyond SMDs (e.g., on polynomial terms, variance ratios, or KS statistics): consider adding polynomial or interaction terms to the propensity score model; using a machine-learning method that flexibly models the propensity score; using an optimization-based method that balances the full distribution, like energy balancing; using coarsened exact matching to balance the full distribution approximately; or adding an exact matching constraint to a matching specification</p></li>
-<li><p>Low ESS: consider using a method to regularize the propensity score model (e.g., ridge or lasso regression); increasing the matching ratio; using an optimization-based method that maximizes the ESS (e.g., profile matching or stable balancing weights); relaxing the caliper (if used); trimming extreme weights; or using overlap weighting</p></li>
+<li><p>Poor balance as measured by SMDs: consider using an optimization-based method, like entropy balancing <span class="citation" data-cites="hainmuellerEntropyBalancingCausal2012">(<a href="references.html#ref-hainmuellerEntropyBalancingCausal2012" role="doc-biblioref">Hainmueller 2012</a>)</span> or cardinality matching <span class="citation" data-cites="zubizarretaMatchingBalancePairing2014">(<a href="references.html#ref-zubizarretaMatchingBalancePairing2014" role="doc-biblioref">Zubizarreta, Paredes, and Rosenbaum 2014</a>)</span> or using a method that changes the estimand, like caliper matching or overlap weighting</p></li>
+<li><p>Poor balance beyond SMDs (e.g., on polynomial terms, variance ratios, or KS statistics): consider adding polynomial or interaction terms to the propensity score model; using a machine-learning method that flexibly models the propensity score <span class="citation" data-cites="leeImprovingPropensityScore2010">(<a href="references.html#ref-leeImprovingPropensityScore2010" role="doc-biblioref">Lee, Lessler, and Stuart 2010</a>)</span>; using an optimization-based method that balances the full distribution, like energy balancing <span class="citation" data-cites="hulingEnergyBalancingCovariate2024">(<a href="references.html#ref-hulingEnergyBalancingCovariate2024" role="doc-biblioref">Huling and Mak 2024</a>)</span>; using coarsened exact matching to balance the full distribution approximately <span class="citation" data-cites="iacusCausalInferenceBalance2012">(<a href="references.html#ref-iacusCausalInferenceBalance2012" role="doc-biblioref">Iacus, King, and Porro 2012</a>)</span>; or adding an exact matching constraint to a matching specification</p></li>
+<li><p>Low ESS: consider using a method to regularize the propensity score model (e.g., ridge or lasso regression); increasing the matching ratio; using an optimization-based method that maximizes the ESS (e.g., profile matching or stable balancing weights <span class="citation" data-cites="zubizarretaStableWeightsThat2015">(<a href="references.html#ref-zubizarretaStableWeightsThat2015" role="doc-biblioref">Zubizarreta 2015</a>)</span>); relaxing the caliper (if used); trimming extreme weights; or using overlap weighting</p></li>
 <li><p>Poor representativeness: consider using a method that strongly respects the estimand (e.g., entropy balancing; not cardinality matching, caliper matching, or overlap weighting) or removing a caliper or exact matching restriction</p></li>
 </ul>
 <p>Having broad experience with the variety of matching and weighting methods available makes this process quick. Fortunately, the software we recommend and use in the examples, the R packages <code>MatchIt</code> and <code>WeightIt</code>, make switching between various specifications easy.</p>
@@ -279,24 +289,39 @@ div.csl-indent {
 <p>Methods that consistently perform well include entropy balancing <span class="citation" data-cites="hainmuellerEntropyBalancingCausal2012">(<a href="references.html#ref-hainmuellerEntropyBalancingCausal2012" role="doc-biblioref">Hainmueller 2012</a>)</span> and energy balancing <span class="citation" data-cites="hulingEnergyBalancingCovariate2022">(<a href="references.html#ref-hulingEnergyBalancingCovariate2022" role="doc-biblioref">Huling and Mak, n.d.</a>)</span>, as these ensure balance and representativeness without requiring major respecification. Entropy balancing guarantees exact balance as measured by the SMD, but it may be necessary to include other terms to fully balance the covariate distributions. Energy balancing balances the full covariate distribution, but can decrease ESS (though the trade-off between them can be managed with a single parameter). Though these methods are newer, they are beginning to see use in applied research <span class="citation" data-cites="bramante2022 sharma2023">(e.g., <a href="references.html#ref-bramante2022" role="doc-biblioref">Bramante et al. 2022</a>; <a href="references.html#ref-sharma2023" role="doc-biblioref">Sharma et al. 2023</a>)</span> and should be the first line of defense when adjusting for confounders rather than poorly performing but older and more familiar methods.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-bramante2022" class="csl-entry" role="listitem">
 Bramante, Carolyn T., Steven G. Johnson, Victor Garcia, Michael D. Evans, Jeremy Harper, Kenneth J. Wilkins, Jared D. Huling, et al. 2022. <span>“Diabetes Medications and Associations with Covid-19 Outcomes in the N3C Database: A National Retrospective Cohort Study.”</span> Edited by Surasak Saokaew. <em>PLOS ONE</em> 17 (11): e0271574. <a href="https://doi.org/10.1371/journal.pone.0271574">https://doi.org/10.1371/journal.pone.0271574</a>.
 </div>
 <div id="ref-hainmuellerEntropyBalancingCausal2012" class="csl-entry" role="listitem">
 Hainmueller, J. 2012. <span>“Entropy Balancing for Causal Effects: A Multivariate Reweighting Method to Produce Balanced Samples in Observational Studies.”</span> <em>Political Analysis</em> 20 (1): 25–46. <a href="https://doi.org/10.1093/pan/mpr025">https://doi.org/10.1093/pan/mpr025</a>.
 </div>
+<div id="ref-hulingEnergyBalancingCovariate2024" class="csl-entry" role="listitem">
+Huling, Jared D., and Simon Mak. 2024. <span>“Energy Balancing of Covariate Distributions.”</span> <em>Journal of Causal Inference</em> 12 (1). <a href="https://doi.org/10.1515/jci-2022-0029">https://doi.org/10.1515/jci-2022-0029</a>.
+</div>
 <div id="ref-hulingEnergyBalancingCovariate2022" class="csl-entry" role="listitem">
-Huling, Jared D., and Simon Mak. n.d. <span>“Energy Balancing of Covariate Distributions.”</span> <a href="https://doi.org/10.48550/arXiv.2004.13962">https://doi.org/10.48550/arXiv.2004.13962</a>.
+———. n.d. <span>“Energy Balancing of Covariate Distributions.”</span> <a href="https://doi.org/10.48550/arXiv.2004.13962">https://doi.org/10.48550/arXiv.2004.13962</a>.
+</div>
+<div id="ref-iacusCausalInferenceBalance2012" class="csl-entry" role="listitem">
+Iacus, Stefano M., Gary King, and Giuseppe Porro. 2012. <span>“Causal Inference Without Balance Checking: Coarsened Exact Matching.”</span> <em>Political Analysis</em> 20 (1): 1–24. <a href="https://doi.org/10.1093/pan/mpr013">https://doi.org/10.1093/pan/mpr013</a>.
 </div>
 <div id="ref-kingWhyPropensityScores2019" class="csl-entry" role="listitem">
 King, Gary, and Richard Nielsen. 2019. <span>“Why Propensity Scores Should Not Be Used for Matching.”</span> <em>Political Analysis</em>, May, 1–20. <a href="https://doi.org/10.1017/pan.2019.11">https://doi.org/10.1017/pan.2019.11</a>.
+</div>
+<div id="ref-leeImprovingPropensityScore2010" class="csl-entry" role="listitem">
+Lee, Brian K., Justin Lessler, and Elizabeth A. Stuart. 2010. <span>“Improving Propensity Score Weighting Using Machine Learning.”</span> <em>Statistics in Medicine</em> 29 (3): 337–46. <a href="https://doi.org/10.1002/sim.3782">https://doi.org/10.1002/sim.3782</a>.
 </div>
 <div id="ref-rosenbaumBiasDueIncomplete1985" class="csl-entry" role="listitem">
 Rosenbaum, Paul R., and Donald B. Rubin. 1985. <span>“The Bias Due to Incomplete Matching.”</span> <em>Biometrics</em> 41 (1): 103–16. <a href="https://doi.org/10.2307/2530647">https://doi.org/10.2307/2530647</a>.
 </div>
 <div id="ref-sharma2023" class="csl-entry" role="listitem">
 Sharma, Mayur, Truong H. Do, Elise F. Palzer, Jared D. Huling, and Clark C. Chen. 2023. <span>“Comparable Safety Profile Between Neuro-Oncology Procedures Involving Stereotactic Needle Biopsy (SNB) Followed by Laser Interstitial Thermal Therapy (LITT) and LITT Alone Procedures.”</span> <em>Journal of Neuro-Oncology</em> 162 (1): 147–56. <a href="https://doi.org/10.1007/s11060-023-04275-w">https://doi.org/10.1007/s11060-023-04275-w</a>.
+</div>
+<div id="ref-zubizarretaStableWeightsThat2015" class="csl-entry" role="listitem">
+Zubizarreta, José R. 2015. <span>“Stable Weights That Balance Covariates for Estimation with Incomplete Outcome Data.”</span> <em>Journal of the American Statistical Association</em> 110 (511): 910–22. <a href="https://doi.org/10.1080/01621459.2015.1023805">https://doi.org/10.1080/01621459.2015.1023805</a>.
+</div>
+<div id="ref-zubizarretaMatchingBalancePairing2014" class="csl-entry" role="listitem">
+Zubizarreta, José R., Ricardo D. Paredes, and Paul R. Rosenbaum. 2014. <span>“Matching for Balance, Pairing for Heterogeneity in an Observational Study of the Effectiveness of for-Profit and Not-for-Profit High Schools in <span>Chile</span>.”</span> <em>The Annals of Applied Statistics</em> 8 (1): 204–31. <a href="https://doi.org/10.1214/13-AOAS713">https://doi.org/10.1214/13-AOAS713</a>.
 </div>
 </div>
 
@@ -336,18 +361,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -379,11 +393,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -393,8 +446,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -406,7 +468,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -450,6 +635,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -475,6 +661,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -536,17 +748,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./assessing.html" class="pagination-link">
+      <a href="./assessing.html" class="pagination-link" aria-label="Assessing quality">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Assessing quality</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./estimating.html" class="pagination-link">
+      <a href="./estimating.html" class="pagination-link" aria-label="Estimating the treatment effect">
         <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Estimating the treatment effect</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 
