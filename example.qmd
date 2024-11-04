@@ -27,6 +27,8 @@ if (!file.exists("rhc.rds")) {
   rhc <- rhc[c(covs, treat, outcome)]
   saveRDS(rhc, "rhc.rds")
 }
+
+rhc <- readRDS("rhc.rds")
 ```
 
 ```{r}
