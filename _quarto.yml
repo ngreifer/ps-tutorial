@@ -2,7 +2,7 @@ project:
   type: book
 
 book:
-  title: "Propensity Score Analysis: A Primer and Tutorial"
+  title: "Matching and Weighting for Causal Inference: A Primer and Tutorial"
   author: "Noah Greifer"
   date: "last-modified"
   page-navigation: true
