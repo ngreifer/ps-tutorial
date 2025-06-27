@@ -8,7 +8,7 @@
 
 <meta name="author" content="Noah Greifer">
 
-<title>3&nbsp; Basic Steps – Matching and Weighting for Causal Inference: A Primer and Tutorial</title>
+<title>1&nbsp; Introduction – Matching and Weighting for Causal Inference: A Primer and Tutorial</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,7 +21,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -31,8 +51,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./conceptual.html" rel="next">
-<link href="./planning.html" rel="prev">
+<link href="./planning.html" rel="next">
+<link href="./index.html" rel="prev">
 <link href="./images/favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -84,7 +104,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./running.html">Running the Analysis</a></li><li class="breadcrumb-item"><a href="./running.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Basic Steps</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -120,7 +140,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+  <a href="./intro.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
@@ -141,7 +161,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./running.html" class="sidebar-item-text sidebar-link active">
+  <a href="./running.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Basic Steps</span></span></a>
   </div>
 </li>
@@ -241,15 +261,21 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#structure-of-this-guide" id="toc-structure-of-this-guide" class="nav-link active" data-scroll-target="#structure-of-this-guide">Structure of this guide</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/IQSS/dss-ps/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./running.html">Running the Analysis</a></li><li class="breadcrumb-item"><a href="./running.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Basic Steps</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-running" class="quarto-section-identifier"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Basic Steps</span></span></h1>
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></h1>
 </div>
 
 
@@ -266,19 +292,40 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>In this section, we describe how to run a matching or weighting analysis. First, we describe the steps and the choices one must make in each step, and then we provide some examples for how to run the described analysis using R.</p>
-<p>The basic steps of the analysis are as follows:</p>
-<ol type="1">
-<li><p>Conceptual step - Selecting the desired estimand, assessing whether the assumptions can be met, and selecting the variables that must be adjusted for.</p></li>
-<li><p>Conditioning step - Performing the matching, weighting, or subclassification, which may involve estimating a propensity score or selecting parameters that govern the conditioning specification (e.g., the number of matches if doing matching).</p></li>
-<li><p>Assessing quality - Assessing to what degree the conditioning step was successful in achieving balance in the distribution of confounders while retaining the target estimand and maintaining precision of the estimate.</p></li>
-<li><p>Respecification - If quality of the conditioning can be improved, respecifying the conditioning step and assessing quality again. This is done repeatedly until a good quality specification is found.</p></li>
-<li><p>Estimate the treatment effect - Using the output of the final conditioning specification, estimating the treatment effect in a robust way that optimizes precision.</p></li>
-<li><p>Assess sensitivity - Assessing the degree to which unmeasured confounding could affect inferences and deciding whether such confounding is a realistic threat.</p></li>
-</ol>
-<p>We will go through these steps in the next sections.</p>
+<p>Matching and weighting are two of many methods that researchers can use to adjust for confounding when estimating the effect of a variable (e.g., a treatment) on an outcome. What distinguishes them from other methods are the assumptions they require in order to be valid and the robustness to unknown features of the data. Broadly, matching and weighting seek to make the treatment independent of confounders so that the association between the treatment and outcome is unbiased for the causal effect of the treatment on the outcome. Common methods of matching and weighting often work by using a new variable constructed as part of the analysis called the “propensity score”, which is why the methods are often known collectively as “propensity score analysis”, though there are variations of matching and weighting that serve the same function but do not involve the propensity score (and often perform better than those that do). Many introductory articles have been written about matching and weighting, including <span class="citation" data-cites="austinIntroductionPropensityScore2011">Austin (<a href="references.html#ref-austinIntroductionPropensityScore2011" role="doc-biblioref">2011</a>)</span>, <span class="citation" data-cites="harderPropensityScoreTechniques2010">Harder, Stuart, and Anthony (<a href="references.html#ref-harderPropensityScoreTechniques2010" role="doc-biblioref">2010</a>)</span>, <span class="citation" data-cites="caliendoPracticalGuidanceImplementation2008">Caliendo and Kopeinig (<a href="references.html#ref-caliendoPracticalGuidanceImplementation2008" role="doc-biblioref">2008</a>)</span>, <span class="citation" data-cites="shadishPrimerPropensityScore2010">Shadish and Steiner (<a href="references.html#ref-shadishPrimerPropensityScore2010" role="doc-biblioref">2010</a>)</span>, and <span class="citation" data-cites="benedettoStatisticalPrimerPropensity2018">Benedetto et al. (<a href="references.html#ref-benedettoStatisticalPrimerPropensity2018" role="doc-biblioref">2018</a>)</span>.</p>
+<p>Consider a situation with a two-level treatment (e.g., treated and control) in which participants were free to select the treatment they received. In order to estimate the causal effect of the treatment on an outcome (e.g., death at 24 months), one needs to make these groups comparable on the variables that induce confounding (i.e., confounders, common causes of the treatment and outcome). Matching and weighting involve dropping, up- and down-weighting, or stratifying units in the sample so that in the adjusted sample, the treatment is independent from the variables used in the adjustment.</p>
+<p>The most commonly used method of matching and weighting is propensity score matching, described originally in <span class="citation" data-cites="rosenbaumCentralRolePropensity1983">Rosenbaum and Rubin (<a href="references.html#ref-rosenbaumCentralRolePropensity1983" role="doc-biblioref">1983</a>)</span>, which involves computing the propensity score for each unit (more details on that later), finding pairs of units that have similar values of the propensity score, and discarding from the sample all units without pairs. What is left is (ideally) a sample in which the distributions of the variables used to compute the propensity score are close to identical between the treated and control groups, just as they would be in a randomized experiment. Despite its popularity, propensity score matching can do more harm than good <span class="citation" data-cites="kingWhyPropensityScores2019">(<a href="references.html#ref-kingWhyPropensityScores2019" role="doc-biblioref">King and Nielsen 2019</a>)</span>; this guide also explains alternative methods that avoid many of the problems propensity score matching faces.</p>
+<p>Matching and weighting are common in medical and social science research because researchers are often interested in the causal effect of a drug, vaccine, procedure, policy, or behavior on individual outcomes (e.g., survival, hospital costs, earnings) but are not in the position to run a randomized control trial and instead have retrospective administrative data or large surveys on individuals receiving those treatments. Without adjustment, individuals receiving treatment may be quite different from those not receiving treatment; they may be older, more likely to be a certain sex, more likely to be a certain race, more likely to have certain comorbidities, etc. Comparing treated and untreated individuals on the specified outcome would not yield a valid estimate of the causal effect of the treatment on the outcome because any observed differences could be driven instead by differences in the distributions of the confounders. Matching and weighting help to isolate the effect of the treatment so that any observed difference in the outcome can only be attributed to treatment.</p>
+<section id="structure-of-this-guide" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="structure-of-this-guide">Structure of this guide</h2>
+<p>Although matching and weighting are analytic methods, the key to performing them well is to understand the theoretical and substantive considerations relevant to the methods; therefore, this guide will focus on those aspects. For the more applied parts of the tutorial, R code and output will be presented to demonstrate the procedure.</p>
+<p>This document will describe the three basic steps of performing a matching or weighting analysis: 1) planning the analysis, 2) running the analysis, and 3) reporting the analysis. In <a href="planning.html" class="quarto-xref"><span>Chapter 2</span></a>, we will describe the conceptual steps that must be done to determine what options will be selected in subsequent steps and to align the analysis with the quantity of interest. In <a href="running.html" class="quarto-xref"><span>Chapter 3</span></a> and the chapters that follow, we provide step-by-step instructions for implementing the computational steps of performing the analysis, including fitting models and estimating quantities of interest. In <a href="reporting.html" class="quarto-xref"><span>Chapter 11</span></a>, we provide guidelines for reporting the results of an analysis, including information to include in tables and figures and information necessary for another researchers to replicate your findings. Finally, in <a href="example.html" class="quarto-xref"><span>Chapter 12</span></a> and the chapters that follow, we present an example analysis that includes R code to implement the methods.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-austinIntroductionPropensityScore2011" class="csl-entry" role="listitem">
+Austin, Peter C. 2011. <span>“An Introduction to Propensity Score Methods for Reducing the Effects of Confounding in Observational Studies.”</span> <em>Multivariate Behavioral Research</em> 46 (3): 399–424. <a href="https://doi.org/10.1080/00273171.2011.568786">https://doi.org/10.1080/00273171.2011.568786</a>.
+</div>
+<div id="ref-benedettoStatisticalPrimerPropensity2018" class="csl-entry" role="listitem">
+Benedetto, Umberto, Stuart J Head, Gianni D Angelini, and Eugene H Blackstone. 2018. <span>“Statistical Primer: Propensity Score Matching and Its Alternatives<span></span>.”</span> <em>European Journal of Cardio-Thoracic Surgery</em> 53 (6): 1112–17. <a href="https://doi.org/10.1093/ejcts/ezy167">https://doi.org/10.1093/ejcts/ezy167</a>.
+</div>
+<div id="ref-caliendoPracticalGuidanceImplementation2008" class="csl-entry" role="listitem">
+Caliendo, Marco, and Sabine Kopeinig. 2008. <span>“Some Practical Guidance for the Implementation of Propensity Score Matching.”</span> <em>Journal of Economic Surveys</em> 22 (1): 31–72. <a href="https://doi.org/10.1111/j.1467-6419.2007.00527.x">https://doi.org/10.1111/j.1467-6419.2007.00527.x</a>.
+</div>
+<div id="ref-harderPropensityScoreTechniques2010" class="csl-entry" role="listitem">
+Harder, Valerie S., Elizabeth A. Stuart, and James C. Anthony. 2010. <span>“Propensity Score Techniques and the Assessment of Measured Covariate Balance to Test Causal Associations in Psychological Research.”</span> <em>Psychological Methods</em> 15 (3): 234–49. <a href="https://doi.org/10.1037/a0019623">https://doi.org/10.1037/a0019623</a>.
+</div>
+<div id="ref-kingWhyPropensityScores2019" class="csl-entry" role="listitem">
+King, Gary, and Richard Nielsen. 2019. <span>“Why Propensity Scores Should Not Be Used for Matching.”</span> <em>Political Analysis</em>, May, 1–20. <a href="https://doi.org/10.1017/pan.2019.11">https://doi.org/10.1017/pan.2019.11</a>.
+</div>
+<div id="ref-rosenbaumCentralRolePropensity1983" class="csl-entry" role="listitem">
+Rosenbaum, Paul R., and Donald B. Rubin. 1983. <span>“The Central Role of the Propensity Score in Observational Studies for Causal Effects.”</span> <em>Biometrika</em> 70 (1): 41–55. <a href="https://doi.org/10.1093/biomet/70.1.41">https://doi.org/10.1093/biomet/70.1.41</a>.
+</div>
+<div id="ref-shadishPrimerPropensityScore2010" class="csl-entry" role="listitem">
+Shadish, William R., and Peter M. Steiner. 2010. <span>“A Primer on Propensity Score Analysis.”</span> <em>Newborn and Infant Nursing Reviews</em>, Quantitative research methodology, 10 (1): 19–26. <a href="https://doi.org/10.1053/j.nainr.2009.12.010">https://doi.org/10.1053/j.nainr.2009.12.010</a>.
+</div>
+</div>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -682,13 +729,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./planning.html" class="pagination-link" aria-label="Planning the Analysis">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Planning the Analysis</span></span>
+      <a href="./index.html" class="pagination-link" aria-label="Preface">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./conceptual.html" class="pagination-link" aria-label="Conceptual aspects of the analysis">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Conceptual aspects of the analysis</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./planning.html" class="pagination-link" aria-label="Planning the Analysis">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Planning the Analysis</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -697,4 +744,4 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/IQSS/dss-ps/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/IQSS/dss-ps/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

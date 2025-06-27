@@ -5,7 +5,7 @@
 <meta name="generator" content="quarto-1.7.32">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Noah Greifer">
-<title>12&nbsp; Matching – Matching and Weighting for Causal Inference: A Primer and Tutorial</title>
+<title>13&nbsp; Matching – Matching and Weighting for Causal Inference: A Primer and Tutorial</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -129,7 +129,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./example.html">Example</a></li><li class="breadcrumb-item"><a href="./ex-match.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Matching</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./example.html">Example</a></li><li class="breadcrumb-item"><a href="./ex-match.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Matching</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -141,6 +141,9 @@ div.csl-indent {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Matching and Weighting for Causal Inference: A Primer and Tutorial</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/IQSS/dss-ps/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -153,13 +156,19 @@ div.csl-indent {
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction</span></a>
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./planning.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Planning the Analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Planning the Analysis</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -174,49 +183,49 @@ div.csl-indent {
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./running.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Basic Steps</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Basic Steps</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./conceptual.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Conceptual aspects of the analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Conceptual aspects of the analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./conditioning.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Conditioning: matching and weighting</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Conditioning: matching and weighting</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./assessing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Assessing quality</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Assessing quality</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./respecification.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Respecification</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Respecification</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./estimating.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Estimating the treatment effect</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Estimating the treatment effect</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sensitivity.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Sensitivity analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Sensitivity analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./advanced.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Advanced topics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Advanced topics</span></span></a>
   </div>
 </li>
       </ul>
@@ -224,7 +233,7 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./reporting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Reporting the Analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Reporting the Analysis</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -239,19 +248,19 @@ div.csl-indent {
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./example.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Example Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Example Data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ex-match.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Matching</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Matching</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ex-weight.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Weighting</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Weighting</span></span></a>
   </div>
 </li>
       </ul>
@@ -259,7 +268,7 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./conclusion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Conclusion</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Conclusion</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -276,8 +285,8 @@ div.csl-indent {
         
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./example.html">Example</a></li><li class="breadcrumb-item"><a href="./ex-match.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Matching</span></a></li></ol></nav><div class="quarto-title">
-<h1 class="title"><span id="sec-ex-matching" class="quarto-section-identifier"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Matching</span></span></h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./example.html">Example</a></li><li class="breadcrumb-item"><a href="./ex-match.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Matching</span></a></li></ol></nav><div class="quarto-title">
+<h1 class="title"><span id="sec-ex-matching" class="quarto-section-identifier"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Matching</span></span></h1>
 </div>
 
 
@@ -294,25 +303,16 @@ div.csl-indent {
 </header><p>To perform matching, we’ll use the <code>MatchIt</code> package, which provides an interface to many forms of matching and allows for specification of many different options to customize the matching. The <code>MatchIt</code> <a href="https://kosukeimai.github.io/MatchIt/index.html">documentation</a> includes extensive examples and vignettes that should be used to supplement the example here. Much of the information here is simply lifted from this documentation.</p>
 <div class="cell">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://kosukeimai.github.io/MatchIt/">"MatchIt"</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'MatchIt'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following object is masked from 'package:cobalt':
-
-    lalonde</code></pre>
-</div>
 </div>
 <p>For matching, we’ll focus on the ATT, though it is possible for some matching methods to target the ATE as well. The simplest method of matching is 1:1 nearest neighbor propensity score matching, which is the default using <code>matchit()</code>. For more details on this procedure, including effect estimation, see the <code>MatchIt</code> documentation and vignettes.</p>
 <div class="cell">
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#1:1 NN propensity score matching w/o replacement</span></span>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#1:1 NN propensity score matching w/o replacement</span></span>
 <span><span class="va">m1</span> <span class="op">&lt;-</span> <span class="fu">matchit</span><span class="op">(</span><span class="va">RHC</span> <span class="op">~</span> <span class="va">aps1</span> <span class="op">+</span> <span class="va">meanbp1</span> <span class="op">+</span> <span class="va">pafi1</span> <span class="op">+</span> <span class="va">crea1</span> <span class="op">+</span> <span class="va">hema1</span> <span class="op">+</span></span>
 <span>                <span class="va">paco21</span> <span class="op">+</span> <span class="va">surv2md1</span> <span class="op">+</span> <span class="va">resp1</span> <span class="op">+</span> <span class="va">card</span> <span class="op">+</span> <span class="va">edu</span> <span class="op">+</span></span>
 <span>                <span class="va">age</span> <span class="op">+</span> <span class="va">race</span> <span class="op">+</span> <span class="va">sex</span>, data <span class="op">=</span> <span class="va">rhc</span><span class="op">)</span></span>
 <span><span class="va">m1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>A matchit object
+<pre><code>A `matchit` object
  - method: 1:1 nearest neighbor matching without replacement
  - distance: Propensity score
              - estimated with logistic regression
@@ -323,7 +323,7 @@ Attaching package: 'MatchIt'</code></pre>
 </div>
 <p>We can use <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code> in <code>MatchIt</code> to assess balance, but we’ll stick with <code>cobalt</code>. We can just supply the <code>matchit</code> object to <code>bal.tab()</code>, which contains the treatment and covariate information.</p>
 <div class="cell">
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">bal.tab</span><span class="op">(</span><span class="va">m1</span>, stats <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"m"</span>, <span class="st">"ks"</span><span class="op">)</span>, binary <span class="op">=</span> <span class="st">"std"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">bal.tab</span><span class="op">(</span><span class="va">m1</span>, stats <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"m"</span>, <span class="st">"ks"</span><span class="op">)</span>, binary <span class="op">=</span> <span class="st">"std"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Balance Measures
                Type Diff.Adj KS.Adj
@@ -353,58 +353,59 @@ Unmatched    1367       0</code></pre>
 </div>
 <p>Although balanced improved, we still have covariates with unacceptable imbalance, and it is possible to do much better than simple 1:1 matching. <span class="citation" data-cites="connorsEffectivenessRightHeart1996a">Connors et al. (<a href="references.html#ref-connorsEffectivenessRightHeart1996a" role="doc-biblioref">1996</a>)</span> used matching with a caliper on the propensity score; here we’ll do so as well, setting a caliper of .2 standard deviations of the logit of the propensity score, which is an arbitrary but often used caliper width:</p>
 <div class="cell">
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">m2</span> <span class="op">&lt;-</span> <span class="fu">matchit</span><span class="op">(</span><span class="va">RHC</span> <span class="op">~</span> <span class="va">aps1</span> <span class="op">+</span> <span class="va">meanbp1</span> <span class="op">+</span> <span class="va">pafi1</span> <span class="op">+</span> <span class="va">crea1</span> <span class="op">+</span> <span class="va">hema1</span> <span class="op">+</span></span>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">m2</span> <span class="op">&lt;-</span> <span class="fu">matchit</span><span class="op">(</span><span class="va">RHC</span> <span class="op">~</span> <span class="va">aps1</span> <span class="op">+</span> <span class="va">meanbp1</span> <span class="op">+</span> <span class="va">pafi1</span> <span class="op">+</span> <span class="va">crea1</span> <span class="op">+</span> <span class="va">hema1</span> <span class="op">+</span></span>
 <span>                <span class="va">paco21</span> <span class="op">+</span> <span class="va">surv2md1</span> <span class="op">+</span> <span class="va">resp1</span> <span class="op">+</span> <span class="va">card</span> <span class="op">+</span> <span class="va">edu</span> <span class="op">+</span></span>
 <span>                <span class="va">age</span> <span class="op">+</span> <span class="va">race</span> <span class="op">+</span> <span class="va">sex</span>, data <span class="op">=</span> <span class="va">rhc</span>,</span>
 <span>              link <span class="op">=</span> <span class="st">"linear.logit"</span>, caliper <span class="op">=</span> <span class="fl">.2</span><span class="op">)</span></span>
 <span><span class="va">m2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>A matchit object
+<pre><code>A `matchit` object
  - method: 1:1 nearest neighbor matching without replacement
  - distance: Propensity score [caliper]
+
              - estimated with logistic regression and linearized
  - caliper: &lt;distance&gt; (0.2)
  - number of obs.: 5735 (original), 3868 (matched)
  - target estimand: ATT
  - covariates: aps1, meanbp1, pafi1, crea1, hema1, paco21, surv2md1, resp1, card, edu, age, race, sex</code></pre>
 </div>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">bal.tab</span><span class="op">(</span><span class="va">m1</span>, stats <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"m"</span>, <span class="st">"ks"</span><span class="op">)</span>, binary <span class="op">=</span> <span class="st">"std"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">bal.tab</span><span class="op">(</span><span class="va">m2</span>, stats <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"m"</span>, <span class="st">"ks"</span><span class="op">)</span>, binary <span class="op">=</span> <span class="st">"std"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Balance Measures
                Type Diff.Adj KS.Adj
-distance   Distance   0.3765 0.2060
-aps1        Contin.   0.2109 0.1103
-meanbp1     Contin.  -0.1447 0.0728
-pafi1       Contin.  -0.1650 0.0907
-crea1       Contin.   0.1296 0.1282
-hema1       Contin.  -0.0494 0.0614
-paco21      Contin.  -0.0699 0.0453
-surv2md1    Contin.  -0.1087 0.0710
-resp1       Contin.  -0.1003 0.0755
-card_Yes     Binary   0.1270 0.0627
-edu         Contin.   0.0307 0.0343
-age         Contin.  -0.0291 0.0682
-race_white   Binary   0.0000 0.0000
-race_black   Binary   0.0038 0.0014
-race_other   Binary  -0.0056 0.0014
-sex_Male     Binary   0.0362 0.0179
+distance   Distance   0.1259 0.1034
+aps1        Contin.   0.0873 0.0579
+meanbp1     Contin.  -0.0552 0.0352
+pafi1       Contin.  -0.0521 0.0429
+crea1       Contin.   0.0477 0.0998
+hema1       Contin.  -0.0196 0.0491
+paco21      Contin.  -0.0015 0.0217
+surv2md1    Contin.  -0.0590 0.0533
+resp1       Contin.  -0.0534 0.0595
+card_Yes     Binary   0.0429 0.0212
+edu         Contin.   0.0145 0.0284
+age         Contin.  -0.0227 0.0693
+race_white   Binary  -0.0150 0.0062
+race_black   Binary   0.0172 0.0062
+race_other   Binary   0.0000 0.0000
+sex_Male     Binary   0.0210 0.0103
 
 Sample sizes
           Control Treated
 All          3551    2184
-Matched      2184    2184
-Unmatched    1367       0</code></pre>
+Matched      1934    1934
+Unmatched    1617     250</code></pre>
 </div>
 </div>
 <p>We can see that several treated units were discarded, which changes the estimand, though we do see major improvements in balance. There are many methods we can try to improve balance while retaining the estimand, but we’ll use generalized full matching <span class="citation" data-cites="savjeGeneralizedFullMatching2021">(<a href="references.html#ref-savjeGeneralizedFullMatching2021" role="doc-biblioref">Sävje, Higgins, and Sekhon 2021</a>)</span> by setting <code>method = "quick"</code>, which is fast and tends to perform well in a variety of settings<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
 <div class="cell">
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">m3</span> <span class="op">&lt;-</span> <span class="fu">matchit</span><span class="op">(</span><span class="va">RHC</span> <span class="op">~</span> <span class="va">aps1</span> <span class="op">+</span> <span class="va">meanbp1</span> <span class="op">+</span> <span class="va">pafi1</span> <span class="op">+</span> <span class="va">crea1</span> <span class="op">+</span> <span class="va">hema1</span> <span class="op">+</span></span>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">m3</span> <span class="op">&lt;-</span> <span class="fu">matchit</span><span class="op">(</span><span class="va">RHC</span> <span class="op">~</span> <span class="va">aps1</span> <span class="op">+</span> <span class="va">meanbp1</span> <span class="op">+</span> <span class="va">pafi1</span> <span class="op">+</span> <span class="va">crea1</span> <span class="op">+</span> <span class="va">hema1</span> <span class="op">+</span></span>
 <span>                <span class="va">paco21</span> <span class="op">+</span> <span class="va">surv2md1</span> <span class="op">+</span> <span class="va">resp1</span> <span class="op">+</span> <span class="va">card</span> <span class="op">+</span> <span class="va">edu</span> <span class="op">+</span></span>
 <span>                <span class="va">age</span> <span class="op">+</span> <span class="va">race</span> <span class="op">+</span> <span class="va">sex</span>, data <span class="op">=</span> <span class="va">rhc</span>,</span>
 <span>              method <span class="op">=</span> <span class="st">"quick"</span><span class="op">)</span></span>
 <span><span class="va">m3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>A matchit object
+<pre><code>A `matchit` object
  - method: Generalized full matching
  - distance: Propensity score
              - estimated with logistic regression
@@ -412,7 +413,7 @@ Unmatched    1367       0</code></pre>
  - target estimand: ATT
  - covariates: aps1, meanbp1, pafi1, crea1, hema1, paco21, surv2md1, resp1, card, edu, age, race, sex</code></pre>
 </div>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">bal.tab</span><span class="op">(</span><span class="va">m3</span>, stats <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"m"</span>, <span class="st">"ks"</span><span class="op">)</span>, binary <span class="op">=</span> <span class="st">"std"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">bal.tab</span><span class="op">(</span><span class="va">m3</span>, stats <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"m"</span>, <span class="st">"ks"</span><span class="op">)</span>, binary <span class="op">=</span> <span class="st">"std"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Balance Measures
                Type Diff.Adj KS.Adj
@@ -440,10 +441,10 @@ Matched (ESS)        1017.28    2184
 Matched (Unweighted) 3551.      2184</code></pre>
 </div>
 </div>
-<p>Balance is good and we retained the target estimand, but generalized full matching took a toll on the effective sample size (ESS) of our control group, which is now around 1000 (from around 3500). Even though generalized full matching retains the entire sample (i.e., not a single unit is dropped), the matching weights resulting from it have variability such that the ESS is much lower than the original sample size. There are ways to manage the balance-ESS trade-off that are specific to each matching method.</p>
-<p>Although balance isn’t perfect and could be improved with additional fine-tuning, we’ll move forward with this matched sample to demonstrate effect estimation and reporting. First, we need to extract the matched sample from the <code>matchit</code> object using <code>match.data()</code>. This adds columns to the original dataset called <code>"distance"</code>, <code>"weights"</code>, and <code>"subclass"</code> containing the propensity score, matching weights, and matched strata (i.e., pair membership). When units are dropped in the matching (e.g., when using 1:1 matching), the output will only contain the units remaining in the matched sample<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
+<p>Balance is good and we retained the target estimand, but generalized full matching quite dramatically reduced the effective sample size (ESS) of our control group, which is now around 1000 (from around 3500). Even though generalized full matching retains the entire sample (i.e., not a single unit is dropped), the matching weights resulting from it have variability such that the ESS is much lower than the original sample size. There are ways to manage the balance-ESS trade-off that are specific to each matching method.</p>
+<p>Although balance isn’t perfect and could be improved with additional fine-tuning, we’ll move forward with this matched sample to demonstrate effect estimation and reporting. First, we need to extract the matched sample from the <code>matchit</code> object using <code>match.data()</code>. This adds columns to the original dataset called <code>"distance"</code>, <code>"weights"</code>, and <code>"subclass"</code> containing the propensity score, matching weights, and matched strata (i.e., pair membership), respectively. When units are dropped as a result of the matching (e.g., when using 1:1 matching), the output will only contain the units remaining in the matched sample<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
 <div class="cell">
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">md</span> <span class="op">&lt;-</span> <span class="fu">match.data</span><span class="op">(</span><span class="va">m3</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">md</span> <span class="op">&lt;-</span> <span class="fu">match.data</span><span class="op">(</span><span class="va">m3</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Names of new dataset; note the three new variables at the end</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">md</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -455,7 +456,7 @@ Matched (Unweighted) 3551.      2184</code></pre>
 </div>
 <p>To estimate the treatment effect, we need to proceed in two steps. First, we fit the outcome model to the matched sample including the matching weights. Second, we compute the treatment effect using g-computation. Our estimand will be the marginal risk ratio for the treated units (i.e., the ATT on the risk ratio scale). We will fit a logistic regression for the outcome, including covariates and their interactions with treatment in the model.</p>
 <div class="cell">
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">fit</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/glm.html">glm</a></span><span class="op">(</span><span class="va">death</span> <span class="op">~</span> <span class="va">RHC</span> <span class="op">*</span> <span class="op">(</span><span class="va">aps1</span> <span class="op">+</span> <span class="va">meanbp1</span> <span class="op">+</span> <span class="va">pafi1</span> <span class="op">+</span> <span class="va">crea1</span> <span class="op">+</span> <span class="va">hema1</span> <span class="op">+</span></span>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">fit</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/glm.html">glm</a></span><span class="op">(</span><span class="va">death</span> <span class="op">~</span> <span class="va">RHC</span> <span class="op">*</span> <span class="op">(</span><span class="va">aps1</span> <span class="op">+</span> <span class="va">meanbp1</span> <span class="op">+</span> <span class="va">pafi1</span> <span class="op">+</span> <span class="va">crea1</span> <span class="op">+</span> <span class="va">hema1</span> <span class="op">+</span></span>
 <span>                            <span class="va">paco21</span> <span class="op">+</span> <span class="va">surv2md1</span> <span class="op">+</span> <span class="va">resp1</span> <span class="op">+</span> <span class="va">card</span> <span class="op">+</span> <span class="va">edu</span> <span class="op">+</span></span>
 <span>                            <span class="va">age</span> <span class="op">+</span> <span class="va">race</span> <span class="op">+</span> <span class="va">sex</span><span class="op">)</span>,</span>
 <span>           data <span class="op">=</span> <span class="va">md</span>,</span>
@@ -464,49 +465,41 @@ Matched (Unweighted) 3551.      2184</code></pre>
 </div>
 <p>There is no value in examining this outcome model; the coefficients are uninterpretable and provide no information about the effects of the included predictors on the outcome <span class="citation" data-cites="westreichTableFallacyPresenting2013">(<a href="references.html#ref-westreichTableFallacyPresenting2013" role="doc-biblioref">Westreich and Greenland 2013</a>)</span>. This model can be arbitrarily complicated and is not designed to be a useful predictive model for the outcome. Its sole purpose is to increase the precision of the resulting effect estimate. We will compute the marginal risks under treatment for each group and compute the risk ratio using g-computation. Here we specify arguments to <code>avg_predictions()</code> to use cluster-robust SEs that account for the matching and restrict the data to the treated units because we are estimating the ATT.</p>
 <div class="cell">
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://marginaleffects.com/">"marginaleffects"</a></span><span class="op">)</span></span>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://marginaleffects.com/">"marginaleffects"</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu">avg_predictions</span><span class="op">(</span><span class="va">fit</span>,</span>
 <span>                variables <span class="op">=</span> <span class="st">"RHC"</span>,</span>
 <span>                vcov <span class="op">=</span> <span class="op">~</span><span class="va">subclass</span>,</span>
 <span>                newdata <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">RHC</span> <span class="op">==</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
- RHC Estimate Std. Error    z Pr(&gt;|z|)   S 2.5 % 97.5 %
-   0    0.656    0.01355 48.4   &lt;0.001 Inf 0.630  0.683
-   1    0.680    0.00915 74.4   &lt;0.001 Inf 0.662  0.698
-
-Type:  response 
-Columns: RHC, estimate, std.error, statistic, p.value, s.value, conf.low, conf.high </code></pre>
 </div>
-</div>
-<p>We find marginal risks of .69 and .713 for the treated units under control and treatment, respectively. We can compute the risk ratio using the following:</p>
+<p>We find marginal risks of 0.656 and 0.68 for the treated units under control and treatment, respectively. We can compute the risk ratio using the following:</p>
 <div class="cell">
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">avg_comparisons</span><span class="op">(</span><span class="va">fit</span>,</span>
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">avg_comparisons</span><span class="op">(</span><span class="va">fit</span>,</span>
 <span>                variables <span class="op">=</span> <span class="st">"RHC"</span>,</span>
 <span>                vcov <span class="op">=</span> <span class="op">~</span><span class="va">subclass</span>,</span>
 <span>                newdata <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">RHC</span> <span class="op">==</span> <span class="fl">1</span><span class="op">)</span>,</span>
 <span>                comparison <span class="op">=</span> <span class="st">"lnratioavg"</span>,</span>
 <span>                transform <span class="op">=</span> <span class="st">"exp"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>
  Estimate Pr(&gt;|z|)   S 2.5 % 97.5 %
      1.04    0.138 2.9 0.989   1.09
 
 Term: RHC
-Type:  response 
-Comparison: ln(mean(1) / mean(0))
-Columns: term, contrast, estimate, p.value, s.value, conf.low, conf.high, predicted_lo, predicted_hi, predicted </code></pre>
+Type: response
+Comparison: ln(mean(1) / mean(0))</code></pre>
 </div>
 </div>
-<p>From this we find a risk ratio of 1.04, indicating that the risk of death is 4% higher for those receiving RHC than had they not received it. The confidence interval for the risk ratio is (.989, 1.09), and the p-value for the test that the log risk ratio is equal to 0 (i.e., that the risk ratio is equal to 1) is .138, indicating no evidence for an effect of RHC in either direction.</p>
+<p>From this we find a risk ratio of 1.04, indicating that the risk of death is 4% higher for those receiving RHC than had they not received it. The confidence interval for the risk ratio is (0.99, 1.09), and the p-value for the test that the log risk ratio is equal to 0 (i.e., that the risk ratio is equal to 1) is 0.138, indicating no evidence of an effect of RHC in either direction.</p>
 <p>To report balance, we could include the final balance table above, a visual representation of it, or a summary of balance statistics (or combinations thereof). A clean visual representation of balance is in a Love plot, which can be requested as follows:</p>
 <div class="cell">
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">love.plot</span><span class="op">(</span><span class="va">m3</span>, stats <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"m"</span>, <span class="st">"ks"</span><span class="op">)</span>, binary <span class="op">=</span> <span class="st">"std"</span>,</span>
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">love.plot</span><span class="op">(</span><span class="va">m3</span>, stats <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"m"</span>, <span class="st">"ks"</span><span class="op">)</span>, binary <span class="op">=</span> <span class="st">"std"</span>,</span>
 <span>          drop.distance <span class="op">=</span> <span class="cn">TRUE</span>, abs <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="ex-match_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="ex-match_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -929,12 +922,12 @@ Westreich, Daniel, and Sander Greenland. 2013. <span>“The <span>Table</span>&n
   });
   </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="./example.html" class="pagination-link" aria-label="Example Data">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Example Data</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Example Data</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./ex-weight.html" class="pagination-link" aria-label="Weighting">
-        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Weighting</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Weighting</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -942,4 +935,4 @@ Westreich, Daniel, and Sander Greenland. 2013. <span>“The <span>Table</span>&n
 
 
 
-</body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/IQSS/dss-ps/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

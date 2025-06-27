@@ -5,7 +5,7 @@
 <meta name="generator" content="quarto-1.7.32">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Noah Greifer">
-<title>13&nbsp; Weighting – Matching and Weighting for Causal Inference: A Primer and Tutorial</title>
+<title>14&nbsp; Weighting – Matching and Weighting for Causal Inference: A Primer and Tutorial</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -109,7 +109,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./example.html">Example</a></li><li class="breadcrumb-item"><a href="./ex-weight.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Weighting</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./example.html">Example</a></li><li class="breadcrumb-item"><a href="./ex-weight.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Weighting</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -121,6 +121,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Matching and Weighting for Causal Inference: A Primer and Tutorial</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/IQSS/dss-ps/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -133,13 +136,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction</span></a>
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./planning.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Planning the Analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Planning the Analysis</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -154,49 +163,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./running.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Basic Steps</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Basic Steps</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./conceptual.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Conceptual aspects of the analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Conceptual aspects of the analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./conditioning.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Conditioning: matching and weighting</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Conditioning: matching and weighting</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./assessing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Assessing quality</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Assessing quality</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./respecification.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Respecification</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Respecification</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./estimating.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Estimating the treatment effect</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Estimating the treatment effect</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sensitivity.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Sensitivity analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Sensitivity analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./advanced.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Advanced topics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Advanced topics</span></span></a>
   </div>
 </li>
       </ul>
@@ -204,7 +213,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./reporting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Reporting the Analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Reporting the Analysis</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -219,19 +228,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./example.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Example Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Example Data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ex-match.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Matching</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Matching</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ex-weight.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Weighting</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Weighting</span></span></a>
   </div>
 </li>
       </ul>
@@ -239,7 +248,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./conclusion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Conclusion</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Conclusion</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -256,8 +265,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./example.html">Example</a></li><li class="breadcrumb-item"><a href="./ex-weight.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Weighting</span></a></li></ol></nav><div class="quarto-title">
-<h1 class="title"><span id="sec-ex-weighting" class="quarto-section-identifier"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Weighting</span></span></h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./example.html">Example</a></li><li class="breadcrumb-item"><a href="./ex-weight.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Weighting</span></a></li></ol></nav><div class="quarto-title">
+<h1 class="title"><span id="sec-ex-weighting" class="quarto-section-identifier"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Weighting</span></span></h1>
 </div>
 
 
@@ -411,33 +420,37 @@ Adjusted   2518.29 1212.94</code></pre>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Marginal predictions</span></span>
 <span><span class="fu">avg_predictions</span><span class="op">(</span><span class="va">fit</span>,</span>
 <span>                variables <span class="op">=</span> <span class="st">"RHC"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>
- RHC Estimate Std. Error    z Pr(&gt;|z|)   S 2.5 % 97.5 %
-   0    0.635    0.00874 72.6   &lt;0.001 Inf 0.618  0.652
-   1    0.668    0.01264 52.8   &lt;0.001 Inf 0.643  0.693
+ RHC Estimate Std. Error    z Pr(&gt;|z|)   S 2.5 % 97.5 %  Df
+   0    0.635    0.00874 72.6   &lt;0.001 Inf 0.618  0.652 Inf
+   1    0.668    0.01264 52.8   &lt;0.001 Inf 0.643  0.693 Inf
 
-Type:  probs 
-Columns: RHC, estimate, std.error, statistic, p.value, s.value, conf.low, conf.high </code></pre>
+Type: probs</code></pre>
 </div>
+</div>
+<div class="cell">
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Risk ratio</span></span>
 <span><span class="fu">avg_comparisons</span><span class="op">(</span><span class="va">fit</span>,</span>
 <span>                variables <span class="op">=</span> <span class="st">"RHC"</span>,</span>
 <span>                comparison <span class="op">=</span> <span class="st">"lnratioavg"</span>,</span>
 <span>                transform <span class="op">=</span> <span class="st">"exp"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>
  Estimate Pr(&gt;|z|)   S 2.5 % 97.5 %
      1.05   0.0295 5.1  1.01    1.1
 
 Term: RHC
-Type:  probs 
-Comparison: ln(mean(1) / mean(0))
-Columns: term, contrast, estimate, p.value, s.value, conf.low, conf.high, predicted_lo, predicted_hi, predicted </code></pre>
+Type: probs
+Comparison: ln(mean(1) / mean(0))</code></pre>
 </div>
 </div>
-<p>Here we find evidence of a positive risk ratio overall, indicating that on average, receiving RHC increases the risk of death by 5%<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
-<p>Again, it is useful to report balance to demonstrate the performance of the weights. Here, we could say that the largest SMD for the covariates was .004 and the largest KS statistic was .029, and the SMDs for all powers of the covariates up to 4 and two-way interactions were less than .021. The specific values for each covariate would not be required because this summary indicates that all covariates were balanced more than adequately.</p>
+<p>Here we find evidence of a positive risk ratio overall, indicating that on average, receiving RHC increases the risk of death by NA%<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
+<p>Again, it is useful to report balance to demonstrate the performance of the weights. Here, we could say that the largest SMD for the covariates was .004 and the largest KS statistic was .029, and the SMDs for all powers of the covariates up to 4 and two-way interactions were less than .021. The specific values for each covariate or a graphical summary would not be required because this simple numeric summary indicates that all covariates were balanced more than adequately.</p>
 
 
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><hr>
@@ -844,12 +857,12 @@ Columns: term, contrast, estimate, p.value, s.value, conf.low, conf.high, predic
   });
   </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="./ex-match.html" class="pagination-link" aria-label="Matching">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Matching</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Matching</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./conclusion.html" class="pagination-link" aria-label="Conclusion">
-        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Conclusion</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Conclusion</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -857,4 +870,4 @@ Columns: term, contrast, estimate, p.value, s.value, conf.low, conf.high, predic
 
 
 
-</body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/IQSS/dss-ps/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
